@@ -9,6 +9,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', function (req, res) {
+  res.send({
+    mensaje: 'Hola mundo',
+    status: 'ok',
+    version: '1.0.0'
+  });
+});
+
 app.get('/:run', function (req, res) {
     res.send(runcl.run(req.params.run));
 });

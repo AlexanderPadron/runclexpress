@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  hello-swarm:
+    image: alex0195/runclexpress:7637cd3fc73d6f0a03961e31f4291cf6a3e9a0d1
+    ports:
+      - 8000:8080
