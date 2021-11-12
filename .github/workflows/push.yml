@@ -11,4 +11,4 @@ jobs:
         name: alex0195/runclexpress
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        tags: "latest,1.0.0"
+        tags: "latest,${{ github.sha }}"

@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
   res.send({
     mensaje: 'Hola mundo',
     status: 'ok',
-    version: '1.0.0'
+    version: '1.0.1'
   });
 });
 
