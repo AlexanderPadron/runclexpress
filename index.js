@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
   res.send({
     mensaje: 'Hola mundo',
     status: 'ok',
-    version: '1.0.2',
+    version: '1.0.3',
     hostname: os.hostname()
   });
 });

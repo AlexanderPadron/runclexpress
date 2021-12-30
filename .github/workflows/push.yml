@@ -1,4 +1,4 @@
-name: Build and Publish Docker
+name: Build and Publish Docker Deploy Server
 on: [push]
 jobs:
   build:
@@ -12,3 +12,16 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         tags: "latest,${{ github.sha }}"
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd ~/home/ubuntu/runclexpress
+          git pull origin master
+          git status
+          yarn install --only=prod
+          pm2 restart index
