@@ -20,7 +20,7 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
-          cd ~/home/ubuntu/runclexpress
+          cd /home/ubuntu/runclexpress
           git pull origin master
           git status
           yarn install --only=prod
